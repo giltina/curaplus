@@ -7,6 +7,7 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Login from './pages/Login'
 import Create from './pages/Create'
 import Prescription from './pages/Prescription'
+import PrescriptionForm from './pages/PrescriptionForm'
 
 const theme = {
   ...DefaultTheme,
@@ -24,9 +25,19 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
     <NavigationContainer style={{backgroundColor: 'green'}}>
-      <Stack.Navigator initialRouteName='Prescription'>
+      <Stack.Navigator initialRouteName='PrescriptionForm'>
         <Stack.Screen name ='Login' component={Login} />
         <Stack.Screen name ='Create' component={Create} />
+        <Stack.Screen name ='PrescriptionForm' component={PrescriptionForm} options={{
+          title: 'Cura Plus Pharmacy',
+          headerStyle: {
+            backgroundColor: '#438983',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          }} />
         <Stack.Screen name ='Prescription' component={Prescription} options={{
           title: 'Cura Plus Pharmacy',
           headerStyle: {
